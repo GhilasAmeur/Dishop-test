@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Dishop Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Bienvenue au Dishop Coding Challenge
 
-## Available Scripts
+## Aperçu
 
-In the project directory, you can run:
+Pour relever ce défi, vous devrez écrire une simple application Web en [React](https://facebook.github.io/react/) et nous fournir les fichiers sources.
 
-### `yarn start`
+Le but de ce défi est d'évaluer vos **compétences et votre approche pour composer une simple application Web** à partir d'un ensemble d'écrans et d'un fichier JSON.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ce défi devrait prendre environ 2 à 4 heures.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Le défi
 
-### `yarn test`
+C'est assez simple. En utilisant les écrans fournis comme référence, vous devrez créer un ensemble de composants React. Vous devrez également utiliser un fichier JSON, filtrer ces données et utiliser les champs appropriés.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Bien qu'il s'agisse d'un exercice de base, nous chercherons **du code simple, bien conçu, performant et testé**.
 
-### `yarn build`
+Veuillez inclure un `README` avec des instructions de configuration et tous les tests ou autres documents que vous avez créés dans le cadre de votre solution.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ajoutez également les informations suivantes à votre `README`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Comment avez-vous décidé des choix techniques et architecturaux utilisés dans le cadre de votre solution?
+- Pouvez-vous apporter des améliorations à votre soumission?
+- Que feriez-vous différemment si on vous accordait plus de temps?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Détails
 
-### `yarn eject`
+Vous devrez créer les 3 pages suivantes avec React:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Une page "Accueil"
+- Une page "Série"
+- Une page "Films"
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Veuillez créer des composants pour chaque partie de la page (par exemple, en-tête, contenu, pied de page, etc.).
+Les assets sont fournis dans le dossier `assets`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Les pages doivent également être utilisables sur les appareils mobiles et tablettes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Page "Accueil"
 
-## Learn More
+Reportez-vous à l'écran [screens/1-home.jpg](./screens/1-home.jpg).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ce sera votre écran `index.html`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Vous devrez afficher les composants qui pointent vers la page "Série" et la page "Films".
 
-### Code Splitting
+### Pages "Série" et "Films"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Reportez-vous aux écrans [screens/2-series.jpg](./screens/2-series.jpg) et [screens/3-movies.jpg](./screens/3-movies.jpg).
 
-### Analyzing the Bundle Size
+Pour chaque page, vous devrez récupérer le fichier JSON dans ./feed/sample.json, puis:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Afficher les 21 premières `entries`
+- Lorsque l'entrée a une valeur d'attribut «releaseYear»> = «2010»
+- Trié par la valeur d'attribut `title` dans l'ordre alphanumérique croissant
 
-### Making a Progressive Web App
+Pour le filtre de page "Série" sur:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Lorsque l'entrée a une valeur d'attribut `programType` égale à `series`
 
-### Advanced Configuration
+Pour le filtre de page "Films" sur:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Lorsque l'entrée a une valeur d'attribut `programType` égale à `movie`
 
-### Deployment
+Les attributs que vous devez utiliser pour afficher les entrées sont:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `title`
+- `images` →`Poster Art` → `url`
 
-### `yarn build` fails to minify
+Vous devrez également gérer les états de chargement et d'erreur lors de la récupération du fichier JSON:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- État "Chargement" [screens/1.1-loading.jpg](./screens/1.1-loading.jpg)
+- État "Erreur" [screens/1.2-error.jpg](./screens/1.2-error.jpg)
+
+## FAQ
+
+### Quel langage, framework, outil de construction ... dois-je utiliser?
+
+Vous pouvez utiliser ce que vous voulez tant que la solution est construite en utilisant [React](https://facebook.github.io/react/).
+
+## Liens utiles
+
+- [Bitbucket](https://bitbucket.org/) - Hébergement de code source, avec des dépôts privés gratuits pour les petites équipes.
+- [Google Fonts - Raleway](https://fonts.google.com/?selection.family=Raleway)
+- [React](https://facebook.github.io/react/)
+
+## Autres notes
+
+Veuillez envoyer tout autre code ou projet dont vous êtes fier et que vous souhaitez partager avec nous.
+
+Tout commentaire sur le défi de codage une fois que vous avez terminé est également apprécié!
